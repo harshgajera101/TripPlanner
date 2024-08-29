@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=The+Seasons:wght@400&display=swap');
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav .sign-up {
+    margin-left: 20px;
+    background-color: #0044cc;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav .sign-up:hover {
+    background-color: #0033a0; /* Darker shade for hover effect */
+}
+
+
+nav .arrow {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position dropdown below the parent item */
+    left: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px; /* Adjust width as needed */
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.content {
+    font-family: 'Montserrat', sans-serif;
+    padding: 50px;
+    background-color: #f8f9fa;
+    text-align: center; /* Center-aligns all content */
+}
+
+.content h2 {
+    font-family: 'The Seasons', serif;
+    font-style: italic;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.content .beach-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Slider Styles */
+.slider {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.slider img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Paragraph Styles */
+.content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: left; /* Aligns text to the left for better readability */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; /* Centers the paragraphs */
+}
+
+.content h3 {
+    font-family: 'The Seasons', serif;
+    font-style: bold;
+    font-size: 28px;
+    margin-top: 30px;
+    color: #333;
+    text-align: left;
+}
+
+.content ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; /* Centers the list */
+}
+
+.content ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.content ul li strong {
+    color: #000;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff; 
+    padding: 50px 20px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px; 
+}
+
+.about-us, .query-form {
+    flex: 1;
+}
+
+.about-us h4, .query-form h4 {
+    font-size: 24px; 
+    margin-bottom: 10px;
+}
+
+.about-us p {
+    font-size: 16px; 
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; 
+    gap: 50px; 
+}
+
+.social-icons img {
+    width: 35px; 
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); 
+}
+
+.query-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.query-form input, .query-form textarea {
+    margin-bottom: 15px; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.query-form button {
+    background-color: #000000; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.query-form button:hover {
+    background-color: #005f6b; 
+    transform: scale(1.05); 
+}
