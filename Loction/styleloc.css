@@ -344,3 +344,212 @@ nav .dropdown:hover .dropdown-menu {
   background-color: #005f6b;
   transform: scale(1.05);
 }
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it stays above the nav */
+}
+
+.menu-toggle span {
+  background-color: #000;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/********************** Media Query ***********************/
+
+/* Default styles are for desktop */
+
+@media screen and (max-width: 1200px) {
+  nav ul {
+    margin-left: 20px;
+  }
+
+  nav ul li {
+    margin-left: 40px;
+  }
+
+  .sign-up {
+    padding: 8px 15px;
+  }
+}
+
+/* For tablets (landscape and portrait) */
+@media screen and (max-width: 992px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: none;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+  }
+
+  nav .sign-up {
+    margin-left: 0;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  nav {
+    /* width: 100%; */
+    display: contents;
+  }
+
+  nav .dropdown-menu {
+    left: 0;
+    position: static;
+    width: fit-content;
+    display: none;
+  }
+
+  nav .dropdown:hover .dropdown-menu {
+    position: static;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav .sign-up {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Make sure nav is hidden by default and fully opens on toggle */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 80%;
+    background-color: white;
+    height: auto;
+    padding: 10px 20px;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  /* Ensure ul opens properly */
+  nav ul.open {
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+  /* Reduce space between items */
+  nav ul li {
+    width: 100%; /* Makes the items take up full width */
+    margin-bottom: 15px; /* Add space between items */
+    margin: 10px 0;
+    flex-grow: 0;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 8px 20px; /* Adjust padding for better appearance */
+    display: block;
+    text-align: left;
+    /* width: 100%; */
+    font-size: 18px;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  /* Sign-up button styling */
+  nav .sign-up {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    width: 50%;
+    text-align: center;
+    background-color: #0044cc;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  nav .sign-up:hover {
+    background-color: #0033a0;
+  }
+}
+
+/*For very small mobile devices */
+@media screen and (max-width: 480px) {
+  nav ul li a {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  nav .dropdown:hover .dropdown-menu {
+    position: static;
+    height: auto;
+    display: inline-block;
+  }
+
+  .sign-up {
+    padding: 10px;
+  }
+}

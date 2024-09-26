@@ -628,7 +628,6 @@ nav .dropdown:hover .dropdown-menu {
   border-radius: 2px;
 }
 
-
 /************** Media Queries for responsiveness ****************/
 
 @media (min-width: 992px) {
@@ -683,6 +682,15 @@ nav .dropdown:hover .dropdown-menu {
   .view-more2 {
     padding: 20px 40px;
   }
+
+  .footer{
+    padding: 50px 20px;
+  }
+
+  .container{
+    width: auto;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -751,9 +759,18 @@ nav .dropdown:hover .dropdown-menu {
     justify-content: center;
     margin-top: 20px;
   }
+
+  .footer{
+    padding: 50px 20px;
+  }
+
+  .container{
+    width: auto;
+  }
+
 }
 
-/********************** Media Query for navbar ***********************/
+/********************** Media Query ***********************/
 
 /* Default styles are for desktop */
 
@@ -768,6 +785,44 @@ nav .dropdown:hover .dropdown-menu {
 
   .sign-up {
     padding: 8px 15px;
+  }
+
+  /****** hotspots *******/
+  .hotspots {
+    padding: 40px 30px;
+  }
+
+  .hotspots h2 {
+    font-size: 40px;
+  }
+
+  .hotspot-item {
+    padding: 15px;
+    max-width: 800px;
+  }
+
+  .hotspot-info h3 {
+    font-size: 22px;
+  }
+
+  .hotspot-info p {
+    font-size: 14px;
+  }
+
+  .stay-tuned {
+    padding: 40px;
+  }
+
+  .stay-tuned-info h2 {
+    font-size: 36px;
+  }
+
+  .stay-tuned-info p {
+    font-size: 18px;
+  }
+
+  .stay-tuned img {
+    width: 350px;
   }
 }
 
@@ -812,6 +867,65 @@ nav .dropdown:hover .dropdown-menu {
   nav ul.open {
     display: flex;
   }
+
+  /****** hotspots *******/
+
+  .hotspots {
+    padding: 30px 20px;
+  }
+
+  .hotspots h2 {
+    font-size: 36px;
+  }
+
+  .hotspot-list {
+    gap: 15px;
+  }
+
+  .hotspot-item {
+    flex-direction: column;
+    max-width: 700px;
+  }
+
+  .hotspot-item img {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+  }
+
+  .hotspot-info h3 {
+    font-size: 20px;
+  }
+
+  .hotspot-info p {
+    font-size: 13px;
+  }
+
+  .stay-tuned {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .stay-tuned-info {
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .stay-tuned-info h2 {
+    font-size: 32px;
+  }
+
+  .stay-tuned-info p {
+    font-size: 16px;
+  }
+
+  .stay-tuned img {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 /* For mobile devices */
@@ -841,6 +955,7 @@ nav .dropdown:hover .dropdown-menu {
   }
 
   nav .dropdown:hover .dropdown-menu {
+    display: inline-block;
     position: static;
     height: auto;
     overflow-y: visible;
@@ -880,7 +995,6 @@ nav .dropdown:hover .dropdown-menu {
     padding: 10px 20px;
     z-index: 1000;
     overflow-y: auto;
-    
   }
 
   /* Ensure ul opens properly */
@@ -925,6 +1039,64 @@ nav .dropdown:hover .dropdown-menu {
   nav .sign-up:hover {
     background-color: #0033a0;
   }
+
+  /****** hotspots *******/
+
+  .hotspots {
+    padding: 20px 15px;
+  }
+
+  .hotspots h2 {
+    font-size: 32px;
+  }
+
+  .hotspot-list{
+    gap: 15px;
+  }
+
+  .hotspot-item {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .hotspot-item img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .hotspot-info h3 {
+    font-size: 18px;
+  }
+
+  .hotspot-info p {
+    font-size: 12px;
+  }
+
+  .stay-tuned {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stay-tuned-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .stay-tuned-info h2 {
+    font-size: 28px;
+    margin: 0 0 25px;
+  }
+
+  .stay-tuned-info p {
+    font-size: 14px;
+  }
+
+  .stay-tuned img {
+    width: 100%;
+    max-width: 350px;
+  }
 }
 
 /*For very small mobile devices */
@@ -942,5 +1114,63 @@ nav .dropdown:hover .dropdown-menu {
 
   .sign-up {
     padding: 10px;
+  }
+
+  /****** hotspots *******/
+  .hotspots {
+    padding: 20px 10px;
+  }
+
+  .hotspots h2 {
+    font-size: 28px;
+  }
+
+  .hotspot-list {
+    gap: 15px;
+  }
+
+  .hotspot-item {
+    padding: 15px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .hotspot-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Adjusting space between image and text content */
+  }
+
+  .hotspot-info h3 {
+    font-size: 18px;
+  }
+
+  .hotspot-info p {
+    font-size: 12px;
+  }
+
+  .stay-tuned {
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stay-tuned-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .stay-tuned-info h2 {
+    font-size: 26px;
+    margin: 0 0 25px;
+  }
+
+  .stay-tuned-info p {
+    font-size: 14px;
+  }
+
+  .stay-tuned img {
+    width: 100%;
+    max-width: 300px; /* Smaller image width for smaller screens */
   }
 }
