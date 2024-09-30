@@ -84,6 +84,10 @@ nav .arrow {
   font-size: 12px;
 }
 
+.user-profile{
+  cursor: pointer;
+}
+
 /************** DROPDOWN ****************/
 
 nav .dropdown:hover .dropdown-menu {
@@ -202,18 +206,45 @@ nav .dropdown:hover .dropdown-menu {
   background-color: #717171;
 }
 
+/****************** Information ****************/
 
 /* Paragraph Styles */
-.content p {
+
+.about-content{
+  margin: 0 50px;
+  margin-bottom: 2rem; 
+}
+
+.information{
+  padding: 0px 50px;
+}
+
+.information h2{
+  margin-bottom: 1rem;
+}
+
+.container-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10PX;
+}
+
+.container-info:nth-child(odd){
+  background-color: #aaa6a6;
+}
+
+.container-info p {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: #333;
   line-height: 1.6;
-  margin: 20px 0;
   text-align: left; /* Aligns text to the left for better readability */
   max-width: 800px;
   margin-left: auto;
-  margin-right: auto; /* Centers the paragraphs */
+  /* margin-bottom: 2rem; */
+  /* margin-right: auto; */
+  margin: 10px 10px 0px 0px;
 }
 
 .content h2{
@@ -226,7 +257,7 @@ nav .dropdown:hover .dropdown-menu {
   font-family: "The Seasons", serif;
   font-style: bold;
   font-size: 28px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   color: #333;
   text-align: left;
 }
@@ -237,7 +268,7 @@ nav .dropdown:hover .dropdown-menu {
   text-align: left;
   max-width: 800px;
   margin-left: auto;
-  margin-right: auto; /* Centers the list */
+  /* margin-right: auto; */
 }
 
 .content ul li {

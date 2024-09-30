@@ -85,6 +85,10 @@ nav .arrow {
   font-size: 12px;
 }
 
+.user-profile{
+  cursor: pointer;
+}
+
 /************** DROPDOWN ****************/
 
 nav .dropdown:hover .dropdown-menu {
