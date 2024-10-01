@@ -2,6 +2,7 @@
 
 * {
   user-select: none;
+  
 }
 
 body {
@@ -199,6 +200,8 @@ nav .dropdown:hover .dropdown-menu {
   transform: scale(1.03);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
+/**************** Hidden Gems ****************/
 
 .hidden-gems {
   font-family: "Montserrat", sans-serif;
@@ -966,8 +969,9 @@ nav .dropdown:hover .dropdown-menu {
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
     cursor: pointer;
+    z-index: 0;
   }
 
   nav ul.open {
@@ -978,10 +982,6 @@ nav .dropdown:hover .dropdown-menu {
     margin-top: 20px;
     width: 100%;
     text-align: center;
-  }
-
-  .menu-toggle {
-    display: flex;
   }
 
   /* Make sure nav is hidden by default and fully opens on toggle */
