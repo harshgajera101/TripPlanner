@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Sign-Up Page</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="sign-up-page">
-        <h1>Sign-Up</h1>
-        <form action="signup.jsp" method="post">
-            <input type="name" id="usrname" name="usremail" required placeholder="Enter Name">
-            <input type="date" id="dob" name="dob" placeholder="Enter Date of Birth">
-            <input type="email" id="email" name="email" required placeholder="Enter E-mail">
-            <input type="password" id="password" name="password" required placeholder="Enter Password">
-            <input type="password" required name="" placeholder="Confirm Password">
-            <button action="" type="submit" class="btn">Sign Up</button>
-            <a href="../Login/index.html"><div class="link-ar"><p>Already registered? Log in</p></div></a>
+      <h1>Sign-Up</h1>
+      <form action="signup.jsp" method="post">
+        <input
+          type="name"
+          id="usrname"
+          name="usremail"
+          required
+          placeholder="Enter Name"
+        />
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          placeholder="Enter Date of Birth"
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Enter E-mail"
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Enter Password"
+        />
+        <input
+          type="password"
+          required
+          name=""
+          placeholder="Confirm Password"
+        />
+        <button action="" type="submit" class="btn">Sign Up</button>
+        <a href="../login/index.html"
+          ><div class="link-ar"><p>Already registered? Log in</p></div></a
+        >
 
-            <div class="icons">
-                <a href="../admin.html">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                          </svg>
-                          <i class="bi-person-fill"></i><span>Admin</span>
-                    </div>
-                </a>
-                
+        <div class="icons">
+          <a href="../admin.html">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-person-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                />
+              </svg>
+              <i class="bi-person-fill"></i><span>Admin</span>
             </div>
-
-        </form>
+          </a>
+        </div>
+      </form>
     </div>
-    
-</body>
+  </body>
 </html>
