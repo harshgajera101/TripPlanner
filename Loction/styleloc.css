@@ -498,10 +498,6 @@ nav .dropdown:hover .dropdown-menu {
     padding: 10px 15px;
   }
 
-  .logo {
-    margin-bottom: 15px;
-  }
-
   nav {
     /* width: 100%; */
     display: contents;
@@ -521,7 +517,8 @@ nav .dropdown:hover .dropdown-menu {
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
+    height: 25px;
     cursor: pointer;
   }
 
@@ -533,10 +530,6 @@ nav .dropdown:hover .dropdown-menu {
     margin-top: 20px;
     width: 100%;
     text-align: center;
-  }
-
-  .menu-toggle {
-    display: flex;
   }
 
   /* Make sure nav is hidden by default and fully opens on toggle */
