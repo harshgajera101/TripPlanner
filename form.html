@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    
+        <!-- Button to open the popup -->
+        <button id="openPopupBtn" class="btn">Create Your Trip</button>
+
+        <!-- Popup modal -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h1>Create Your Trip!!</h1>
+                <form>
+                    <div class="Category box-1">
+                        <label for="destination-category">Destination Category:</label>
+                        <select id="destination-category" name="destination-category">
+                            <option value="beaches">Beaches</option>
+                            <option value="waterfalls">Waterfalls</option>
+                            <option value="national-parks">National Parks</option>
+                            <option value="treks">Treks</option>
+                            <option value="religious-places">Religious Places</option>
+                            <option value="forts-caves">Forts/Caves</option>
+                        </select>
+                    </div>
+    
+                    <div class="day box-1">
+                        <label for="no-of-days">No. of Days:</label>
+                        <select id="no-of-days" name="no-of-days">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+    
+                    <div class="people box-1">
+                        <label for="no-of-travellers">No. of Travellers:</label>
+                        <select id="no-of-travellers" name="no-of-travellers">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+    
+                    <div class="interest box-1">
+                        <label for="interests">Interests:</label>
+                        <div>
+                            <input type="checkbox" id="interest-nature" name="interests[]" value="Nature">
+                            <label for="interest-nature">Nature</label>
+                            <input type="checkbox" id="interest-food" name="interests[]" value="Food">
+                            <label for="interest-food">Food</label>
+                            <input type="checkbox" id="interest-culture" name="interests[]" value="Culture">
+                            <label for="interest-culture">Culture</label>
+                            <input type="checkbox" id="interest-hiking" name="interests[]" value="Hiking">
+                            <label for="interest-hiking">Hiking</label>
+                            <input type="checkbox" id="interest-museums-history" name="interests[]" value="Museums/History">
+                            <label for="interest-museums-history">Museums/History</label>
+                        </div>
+                    </div>
+    
+                    <div class="budget box-1">
+                        <label for="budget-range">Budget Range:</label>
+                        <input type="range" min="1000" max="10000" value="1000" step="500" id="priceRange" class="slider">
+                        <p>Selected Price: <span id="priceValue">1000</span></p>
+                    </div>
+    
+                    <div class="transportation box-1">
+                        <label for="transportation">Transportation:</label>
+                        <div>
+                            <input type="radio" id="transportation-rental-cars-bikes" name="transportation" value="Rental Cars/Bikes">
+                            <label for="transportation-rental-cars-bikes">Rental Cars/Bikes</label>
+                            <input type="radio" id="transportation-flight" name="transportation" value="Flight">
+                            <label for="transportation-flight">Flight</label>
+                            <input type="radio" id="transportation-train" name="transportation" value="Train">
+                            <label for="transportation-train">Train</label>
+                            <input type="radio" id="transportation-bus" name="transportation" value="Bus">
+                            <label for="transportation-bus">Bus</label>
+                            <input type="radio" id="transportation-cruise-ship" name="transportation" value="Cruise/Ship">
+                            <label for="transportation-cruise-ship">Cruise/Ship</label>
+                        </div>
+                    </div>
+    
+                    <div class="accommodation box-1">
+                        <label for="accommodation">Accommodation:</label>
+                        <div>
+                            <input type="radio" id="accommodation-hotel" name="accommodation" value="Hotel">
+                            <label for="accommodation-hotel">Hotel</label>
+                            <input type="radio" id="accommodation-hostel" name="accommodation" value="Hostel">
+                            <label for="accommodation-hostel">Hostel</label>
+                            <input type="radio" id="accommodation-airbnb" name="accommodation" value="Airbnb">
+                            <label for="accommodation-airbnb">Airbnb</label>
+                            <input type="radio" id="accommodation-camping" name="accommodation" value="Camping">
+                            <label for="accommodation-camping">Camping</label>
+                        </div>
+                    </div>
+    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    <script src="./from.js"></script>
+</body>
+
+</html>

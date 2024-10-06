@@ -1,0 +1,352 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with TopoJSON</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+    <script src="/maharashtra/maharashtra.topo.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <style>
+        #map {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([19.7515, 75.7139], 7);
+
+        // Add tile layers
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        var googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        var googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        // Layer options for map control
+        var mapLayers = {
+            "Street View": googleStreets,
+            "Hybrid View": googleHybrid,
+            "Satellite View": googleSat,
+            "Terrain View": googleTerrain
+        };
+
+        var baseLayers = {
+            "OpenStreetMap": osm
+        };
+
+        L.control.layers(mapLayers, baseLayers, { collapsed: false }).addTo(map);
+
+        //add add it to map
+
+
+        var myIcon = L.icon({
+            iconUrl: '/img/car.png',
+            iconSize: [30, 45]
+        })
+
+        var marker = L.marker([19.7515, 75.7139], { icon: myIcon }).addTo(map);
+        marker.bindPopup("C: " + marker.getLatLng()).openPopup()
+
+
+
+        // Use the TopoJSON stored in the maharashtraTopo.js file
+        const geojson = topojson.feature(maharashtra, maharashtra.objects['maharashtra-divisions']);  // Replace 'maharashtra' with the correct object name
+
+        // Add GeoJSON data to the map
+        L.geoJSON(geojson).addTo(map);
+        
+        map.on('click', (event) => {
+            marker.setLatLng(event.latlng)
+            marker.bindPopup("C: " + event.latlng).openPopup();
+        })
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(57.74, 11.94),
+                L.latLng(57.6792, 11.949),
+                L.latLng(57.686533, 12.020416)
+            ]
+        }).addTo(map);
+
+        
+    </script>
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with Routes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="/maharashtra/maharashtra.topo.js"></script>
+    <style>
+        *{
+            margin: 0px;
+        }
+        
+        #map {
+            height: 100vh;
+        }
+
+        .waypoints-box {
+            /* position: absolute; */
+            top: 500px;
+            left: 91vw;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            z-index: 1000;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(255, 255, 255, 0.3);
+        }
+
+        .waypoint-item {
+            margin-bottom: 8px;
+        }
+
+        .waypoint-item button {
+            margin-left: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+        /* Override the background and size of the routing container */
+        .leaflet-routing-container {
+            width: 250px !important;
+            /* Set fixed width */
+            height: 300px !important;
+            /* Set fixed height */
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            /* Light background */
+            border-radius: 8px !important;
+            /* Rounded corners */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+            /* Shadow effect */
+            overflow-y: auto !important;
+            /* Enable vertical scrolling */
+            padding: 10px !important;
+            /* Add some padding */
+        }
+
+        /* Override styles for instructions */
+        .leaflet-routing-instructions {
+            font-size: 14px !important;
+            /* Font size for instructions */
+            color: #333 !important;
+            /* Text color */
+        }
+
+        /* Override styles for routing buttons */
+        .leaflet-routing-button {
+            background-color: #007BFF !important;
+            /* Button color */
+            color: white !important;
+            /* Button text color */
+            border-radius: 4px !important;
+            /* Rounded button corners */
+        }
+
+        /* Hover effect for routing buttons */
+        .leaflet-routing-button:hover {
+            background-color: #0056b3 !important;
+            /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hotspots">
+        <h2>Your Results</h2>
+        <div class="hotspot-list">
+            <a href="../Loction/tarkarli.html">
+                <div class="hotspot-item">
+                    <img src="../images/gem1.jpg" alt="Tarkarli Beach">
+                    <div class="hotspot-info">
+                        <h3>Tarkarli Beach</h3>
+                        <p><strong>Location: Tarkarli, Sindhudurg District</strong></p>
+                        <p>A serene beach destination known for its clear waters, Tarkarli Beach offers a perfect getaway for nature lovers and adventure seekers alike.</p>
+                    </div>
+                </div>
+            </a>
+            <div class="hotspot-item">
+                <img src="../images/gem2.jpg" alt="Karnala Bird Sanctuary">
+                <div class="hotspot-info">
+                    <h3>Karnala Bird Sanctuary</h3>
+                    <p><strong>Location: Karnala, Raigad District</strong></p>
+                    <p>Home to a wide variety of bird species, Karnala Bird Sanctuary is a haven for birdwatchers and those seeking tranquility in nature. </p>
+                </div>
+            </div>
+            <div class="hotspot-item">
+                <img src="../images/gem3.jpeg" alt="Naneghat">
+                <div class="hotspot-info">
+                    <h3>Naneghat</h3>
+                    <p><strong>Location: Naneghat, Thane District</strong></p>
+                    <p>An ancient mountain pass with historical significance, Naneghat offers breathtaking views and a peek into Maharashtra's rich history.</p>
+                </div>
+            </div>
+            <div class="hotspot-item">
+                <img src="../images/gem4.jpg" alt="Kondeshwar Temple">
+                <div class="hotspot-info">
+                    <h3>Kondeshwar Temple</h3>
+                    <p><strong>Location: Kondeshwar, Thane District</strong></p>
+                    <p>A hidden gem amidst lush greenery, Kondeshwar Temple is a tranquil spot ideal for a spiritual retreat or a peaceful day out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="map"></div>
+
+    <!-- Box to display the waypoints -->
+    <div class="waypoints-box" id="waypoints-box">
+        <h4>Places in Route:</h4>
+        <ul id="waypoints-list">
+            Mumbai
+        </ul>
+    </div>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([19.7515, 75.7139], 7);
+
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        var googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        var googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+
+        // Layer options for map control
+        var mapLayers = {
+            "Street View": googleStreets,
+            "Hybrid View": googleHybrid,
+            "Satellite View": googleSat,
+            "Terrain View": googleTerrain
+        };
+
+        var baseLayers = {
+            "OpenStreetMap": osm
+        };
+
+        L.control.layers(mapLayers, baseLayers, { collapsed: false }).addTo(map);
+
+        // Use the TopoJSON stored in the maharashtraTopo.js file
+        const geojson = topojson.feature(maharashtra, maharashtra.objects['maharashtra-divisions']);  // Replace 'maharashtra' with the correct object name
+
+        // Add GeoJSON data to the map
+        L.geoJSON(geojson).addTo(map);
+
+        // Add tile layer
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // Define waypoints
+        var waypoints = [];   // L.latLng(57.74, 11.94),
+
+
+        
+        // Function to render the list of waypoints in the box
+        function renderWaypointsList() {
+            const waypointsList = document.getElementById('waypoints-list');
+            waypointsList.innerHTML = ''; // Clear the list
+
+            waypoints.forEach((waypoint, index) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('waypoint-item');
+                listItem.innerHTML = `Place ${index + 1}: ${waypoint.lat.toFixed(4)}, ${waypoint.lng.toFixed(4)}
+                    <button onclick="removeWaypoint(${index})">-</button>`;
+                waypointsList.appendChild(listItem);
+            });
+        }
+
+        // Initialize routing
+        var routingControl = L.Routing.control({
+            waypoints: waypoints
+        }).addTo(map);
+
+        // Function to remove a waypoint and update the route
+        function removeWaypoint(index) {
+            waypoints.splice(index, 1); // Remove waypoint from the array
+            routingControl.setWaypoints(waypoints); // Update the route on the map
+            renderWaypointsList(); // Update the waypoint list in the box
+        }
+
+        // Render the initial waypoint list
+        renderWaypointsList();
+
+        // Map click event to add a new waypoint (optional)
+        map.on('click', function (e) {
+            waypoints.push(e.latlng); // Add clicked location as a new waypoint
+            routingControl.setWaypoints(waypoints); // Update the route
+            renderWaypointsList(); // Re-render the list
+        });
+
+    </script>
+</body>
+
+</html>

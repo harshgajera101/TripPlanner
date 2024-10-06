@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripPlanner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./form/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!---------------- HEADER-------------------->
+
+    <header>
+        <a href="./index.html">
+            <div class="logo">
+                <img src="./images/logo.png" alt="TripPlanner Logo">
+            </div>
+        </a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <!-- <li><a href="#">Home</a></li> -->
+                <li class="dropdown">
+                    <a href="#">Hotspots <span class="arrow"><i class="ri-arrow-down-s-line"></i></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./Loction/tarkarli.html">Tarkarli</a></li>
+                        <li><a href="#">Naneghat</a></li>
+                        <li><a href="#">Karnala</a></li>
+                        <li><a href="#">Kondeshwar</a></li>
+                        <li><a href="#">Murud-Janjira</a></li>
+                        <li><a href="#">Bedse Caves</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Categories <span class="arrow"><i class="ri-arrow-down-s-line"></i></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Beaches</a></li>
+                        <li><a href="#">National Parks</a></li>
+                        <li><a href="#">Treks</a></li>
+                        <li><a href="#">Religious Places</a></li>
+                        <li><a href="#">Forts & Caves</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blogs.html">Blogs</a></li>
+                <li><a href="#">Suggestions</a></li>
+                <li><a href="#footer">About Us</a></li>
+                <li><a href="./signup/index.html" class="sign-up">Sign Up</a></li>
+                <!-- <li><a><img src="./images/user.png" alt=""></a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <!------------------------ BANNER --------------------------->
+
+    <section class="hero">
+        <h2>DISCOVER HIDDEN GEMS AND LOCAL SECRETS</h2>
+        <p class="tagline">Your Ultimate Guide to Unforgettable Journeys!</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Explore Here...">
+            <button><i class="ri-search-line"></i></button>
+        </div>
+
+        <!-- Button to open the popup -->
+        <button id="openPopupBtn" class="btn">Plan Your Trip</button>
+
+        <!-- Popup modal -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h1>Plan Your Trip!!</h1>
+                <form>
+                    <div class="Category box-1">
+                        <label for="destination-category">Destination Category:</label>
+                        <select id="destination-category" name="destination-category">
+                            <option value="beaches">Beaches</option>
+                            <option value="waterfalls">Waterfalls</option>
+                            <option value="national-parks">National Parks</option>
+                            <option value="treks">Treks</option>
+                            <option value="religious-places">Religious Places</option>
+                            <option value="forts-caves">Forts/Caves</option>
+                        </select>
+                    </div>
+
+                    <div class="day box-1">
+                        <label for="no-of-days">No. of Days:</label>
+                        <select id="no-of-days" name="no-of-days">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+
+                    <div class="people box-1">
+                        <label for="no-of-travellers">No. of Travellers:</label>
+                        <select id="no-of-travellers" name="no-of-travellers">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5+</option>
+                        </select>
+                    </div>
+
+                    <div class="interest box-1">
+                        <label for="interests">Interests:</label>
+                        <div class="check-radio">
+                            <div>
+                                <input type="checkbox" id="interest-nature" name="interests[]" value="Nature">
+                                <label for="interest-nature">Nature</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest-food" name="interests[]" value="Food">
+                                <label for="interest-food">Food</label>   
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest-culture" name="interests[]" value="Culture">
+                                <label for="interest-culture">Culture</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest-hiking" name="interests[]" value="Hiking">
+                                <label for="interest-hiking">Hiking</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest-museums-history" name="interests[]"
+                                value="Museums/History">
+                                <label for="interest-museums-history">Museums/History</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="budget box-1">
+                        <label for="budget-range">Budget Range:</label>
+                        <input type="range" min="1000" max="10000" value="1000" step="500" id="priceRange"
+                            class="slider">
+                        <p>Selected Price: <span id="priceValue">1000</span></p>
+                    </div>
+
+                    <div class="transportation box-1">
+                        <label for="transportation">Transportation:</label>
+                        <div class="check-radio">
+                            <div>
+                                <input type="radio" id="transportation-rental-cars-bikes" name="transportation"
+                                value="Rental Cars/Bikes">
+                                <label for="transportation-rental-cars-bikes">Rental Cars/Bikes</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="transportation-flight" name="transportation" value="Flight">
+                                <label for="transportation-flight">Flight</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="transportation-train" name="transportation" value="Train">
+                                <label for="transportation-train">Train</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="transportation-bus" name="transportation" value="Bus">
+                                <label for="transportation-bus">Bus</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="transportation-cruise-ship" name="transportation"
+                                value="Cruise/Ship">
+                                <label for="transportation-cruise-ship">Cruise/Ship</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accommodation box-1">
+                        <label for="accommodation">Accommodation:</label>
+                        <div class="check-radio">
+                            <div>
+                                <input type="radio" id="accommodation-hotel" name="accommodation" value="Hotel">
+                                <label for="accommodation-hotel">Hotel</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="accommodation-hostel" name="accommodation" value="Hostel">
+                                <label for="accommodation-hostel">Hostel</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="accommodation-airbnb" name="accommodation" value="Airbnb">
+                                <label for="accommodation-airbnb">Airbnb</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="accommodation-camping" name="accommodation" value="Camping">
+                                <label for="accommodation-camping">Camping</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------- HIDDEN GEM  ----------------------->
+
+    <section class="hidden-gems">
+        <h2>Take a look at some of the Hidden Gems of Maharashtra</h2>
+        <div class="gem-grid">
+            <div class="gem-card">
+                <img src="./images/gem1.jpg" alt="Hidden Gem 1">
+                <p class="title">Tarkarli Beach</p>
+                A serene beach destination known for its clear waters, Tarkarli Beach offers a perfect getaway for
+                nature lovers and adventure seekers alike.</p>
+                <a href="./Loction/tarkarli.html" class="read-more-link">Read More</a>
+            </div>
+            <div class="gem-card">
+                <img src="./images/gem2.jpg" alt="Hidden Gem 2">
+                <p class="title">Karnala Bird Sanctuary</p>
+                Home to a wide variety of bird species, Karnala Bird Sanctuary is a haven for birdwatchers and those
+                seeking tranquility in nature.</p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+            <div class="gem-card">
+                <img src="./images/gem3.jpeg" alt="Hidden Gem 3">
+                <p class="title">Naneghat Trek</p>
+                An ancient mountain pass with historical significance, Naneghat offers breathtaking views and a peek
+                into Maharashtra's rich history.</p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+            <div class="gem-card">
+                <img src="./images/gem4.jpg" alt="Hidden Gem 4">
+                <p class="title">Kondeshwar Temple</p>
+                A hidden gem amidst lush greenery, Kondeshwar Temple is a tranquil spot ideal for a spiritual retreat or
+                a peaceful day out.</p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+        </div>
+        <a href="hotspots.html" class="view-more">View More <span><i class="ri-arrow-right-s-line"></i></span></a>
+    </section>
+
+    <hr class="partition-line">
+
+    <!----------------------- BLOGS ----------------------->
+
+    <section class="blogs">
+        <h2>Latest Blogs</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="./images/blog1.jpg" alt="Top 10 Waterfalls in Maharashtra">
+                <p class="title">Top 10 Waterfalls in Maharashtra</p>
+                <p>Discover the most stunning waterfalls in Maharashtra, perfect for a refreshing getaway and adventure.
+                </p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="./images/blog2.jpg" alt="Best Places for Trekking in Maharashtra">
+                <p class="title">Best Places for Trekking in Maharashtra</p>
+                <p>Explore the best trekking destinations in Maharashtra, offering breathtaking views and thrilling
+                    experiences.</p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="./images/blog3.png" alt="Historical Sites to Visit in Maharashtra">
+                <p class="title">Historical Sites to Visit in Maharashtra</p>
+                <p>Uncover the rich history of Maharashtra through its most important historical sites and landmarks.
+                </p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="./images/blog4.jpg" alt="Caves in Maharashtra">
+                <p class="title">Exploring the Caves of Maharashtra</p>
+                <p>Embark on a journey to explore ancient and mystical caves of Maharashtra, rich with history and
+                    natural beauty.</p>
+                <a href="#" class="read-more-link">Read More</a>
+            </div>
+        </div>
+        <a href="blogs.html" class="view-more2">View More <span><i class="ri-arrow-right-s-line"></i></span></a>
+    </section>
+
+    <!--------------------------- FOOTER ----------------------------->
+
+    <section class="footer" id="footer">
+        <div class="container footer-content">
+            <div class="about-us">
+                <h4>About Us</h4>
+                <p>Welcome to your insiders guide to authentic travel experiences. Discover hidden gems and essential
+                    tips from locals to explore destinations like never before!</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/?hl=en" target="_blank"><img src="./images/instagram.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="./images/facebook.png"
+                            alt="Facebook"></a>
+                    <a href="https://x.com/?lang=en" target="_blank"><img src="./images/x.png" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="./images/youtube.png"
+                            alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="query-form">
+                <h4>Have a Query?</h4>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="email" name="email" placeholder="E-mail">
+                    <textarea name="query" placeholder="Write Query"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
