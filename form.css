@@ -1,5 +1,9 @@
 /************* create trip btn **************/
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* Button styling */
 .btn {
   padding: 10px 20px;
@@ -67,7 +71,7 @@
   max-width: 700px;
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  max-height: 90vh; /* Ensure the content doesn't overflow beyond the screen */
+  max-height: 85vh; /* Ensure the content doesn't overflow beyond the screen */
   overflow-y: auto; /* Scroll if the content exceeds available height */
   text-align: justify;
 }

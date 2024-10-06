@@ -5,10 +5,13 @@
   
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  scroll-behavior: smooth;
 }
 
 a {
