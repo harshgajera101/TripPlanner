@@ -1,1 +1,1 @@
-Live Preview - https://harshgajera101.github.io/TripPlanner/
+Live Preview - https://tripplanner-7d1l.onrender.com/
