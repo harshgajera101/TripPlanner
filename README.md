@@ -45,6 +45,37 @@ A comprehensive travel planning web application that helps users discover hidden
 ---
 
 
+## 📱 Application Screenshots
+
+### 🔐 User Registration/Login
+<img width="1470" height="911" alt="Screenshot 2025-07-19 at 4 46 09 PM" src="https://github.com/user-attachments/assets/3d4249b5-4454-4c62-a882-846e3b4faf05" />
+
+<img width="1470" height="901" alt="Screenshot 2025-07-19 at 4 46 41 PM" src="https://github.com/user-attachments/assets/c68a2e14-3a5c-41fb-b626-6a4af02be1a1" />
+
+### 🏠 Homepage
+<img width="1470" height="779" alt="Screenshot 2025-07-19 at 4 47 10 PM" src="https://github.com/user-attachments/assets/8fbdad15-248f-4a36-96b2-b5f5e642b9b5" />
+
+<img width="1470" height="798" alt="Screenshot 2025-07-19 at 5 19 27 PM" src="https://github.com/user-attachments/assets/e810881c-dc0e-4897-87fa-cf7a88a30041" />
+
+<img width="1470" height="766" alt="Screenshot 2025-07-19 at 5 18 19 PM" src="https://github.com/user-attachments/assets/ec2610dc-078c-4208-8138-d2744a4735af" />
+
+### 🔍 Homepage Search
+
+
+### 🔍 All blogs
+
+
+### ➕ All Hidden Gems
+
+
+### 🏨 Hidden Gem detail
+
+
+### ✏️ Blog detail
+
+---
+
+
 ## 📦 Installation & Setup
 
 ### Prerequisites
